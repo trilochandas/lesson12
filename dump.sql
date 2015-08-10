@@ -1,4 +1,10 @@
 -- Adminer 4.2.0 MySQL dump
+
+SET NAMES utf8mb4;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
 DROP TABLE IF EXISTS `adverts`;
 CREATE TABLE `adverts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -17,9 +23,9 @@ CREATE TABLE `adverts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `adverts` (`id`, `type`, `name`, `email`, `allow_mails`, `phone`, `city`, `metro`, `category_id`, `title`, `description`, `price`) VALUES
-(1,	'company',	'asdf',	'asdf@asdf.asdf',	0,	'123',	'',	'0',	'',	'321',	'321',	321),
-(2,	'private',	'52354',	'',	0,	'52354',	'',	'0',	'',	'444',	'444',	444),
-(3,	'private',	'Tree humble',	'gdsg@aeg.asdf',	1,	'325',	'',	'',	'',	'shikshashtaka 3',	'trinad api sunuchena',	3);
+(1,	'private',	'Tri',	'tri@f.com',	1,	'0991234567',	'108',	'1',	'6',	'Selling car',	'Selling new rickshaw',	40),
+(3,	'private',	'Shukadev',	'rajiv@sell.in',	1,	'0360120120',	'64',	'3',	'6',	'Selling bell',	'Good quality of bell from bell metal. 14 cm in diameter.',	3),
+(4,	'private',	'Bhagwat',	'bhagwat@sggm.in',	0,	'0531081081',	'16108',	'2',	'7',	'Buy seeds of tulsi',	'I need seed to plant tulsi. I need have 3 tulsi in my garden.',	8);
 
 DROP TABLE IF EXISTS `select_meta`;
 CREATE TABLE `select_meta` (
@@ -31,8 +37,8 @@ CREATE TABLE `select_meta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `select_meta` (`id`, `name`, `label`, `options`) VALUES
-(1,	'city',	'Город',	'{\"\":\"Выберите город\",\"64\":\"Маяпур\", \"16108\":\"Пури\", \"108\":\"Вриндаван\"}'),
-(2,	'metro',	'Метро',	'[\"Выберите станцию\",\"Deli-Aeropor\", \"Jabo\", \"Haribo\"]'),
-(3,	'Categorys',	'Категории',	'{\"\":\"Выберите категорию\",\"Спорт\":{\"6\":\"Гольф\",\"9\":\"Крикет\",\"7\":\"Плавание\"},\"Отдых\":{\"3\":\"Сауна\",\"1\":\"Массаж\"}}');
+(1,	'city',	'Город',	'{\"\":\"Select city\",\"64\":\"Mayapur\", \"16108\":\"Puri\", \"108\":\"Vrindavan\"}'),
+(2,	'metro',	'Метро',	'[\"Select station\",\"Deli-Aeropor\", \"Jabo\", \"Haribo\"]'),
+(3,	'Categorys',	'Категории',	'{\"\":\"Select category\",\"Seva\":{\"6\":\"Puja\",\"9\":\"Japa\",\"7\":\"Tulasi seva\"},\"Rest\":{\"3\":\"Darshan\",\"1\":\"Kirtan\"}}');
 
--- 2015-08-07 12:00:07
+-- 2015-08-10 11:58:50

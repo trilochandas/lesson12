@@ -1,6 +1,7 @@
 <tr><td>{$ad->getId()}</td>
-                 <td>{$ad->getTitle()}</td>
+                 <td><a href="?id={$ad->getId()}">{$ad->getTitle()}</a></td>
                  <td>{$ad->getDesc()}</td>
+                 <td>{$ad->getPrice()}</td>
                  <td>{$ad->getName()}</td>
                  <td><a href="?del={$ad->getId()}" class="btn btn-danger">Delete</a></td>
                  </tr>
