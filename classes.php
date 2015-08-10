@@ -72,10 +72,10 @@ class Ads{
     
 }
 
-class Private extends Ads {
+class PrivateAdverts extends Ads {
     
 }
-class Private extends Company {
+class CompanyAdverts extends Ads {
 
 }
 
