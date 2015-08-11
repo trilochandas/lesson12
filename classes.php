@@ -63,9 +63,8 @@ class Ads{
         header("Location: {$_SERVER['PHP_SELF']}");
     }
 
-    public static function deleteAdvert() {
+    public static function deleteAdvert($id) {
         global $db;
-        $id = (int) $_GET['del'];
         $db->query('DELETE FROM adverts WHERE id=?', $id);
     }
     
@@ -73,6 +72,12 @@ class Ads{
 }
 
 class PrivateAdverts extends Ads {
+    public $type;
+
+    public function __construct($ad) {
+        parent::__construct($ad);
+        $this->type=$ad['type'];
+    }
     
 }
 class CompanyAdverts extends Ads {
@@ -132,10 +137,9 @@ class AdsStore{
         return self::$instance;
     }
 
-    public static function advertForForm() {
+    public static function advertForForm($id) {
         global $smarty;
         global $db;
-        $id = (int) $_GET['id'];
         $advertForForm = $db->query('SELECT * FROM adverts WHERE id=?', $id);
         // var_dump($advertForForm[0]);
         foreach ($advertForForm[0] as $key => $value) 

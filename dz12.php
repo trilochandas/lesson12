@@ -34,7 +34,8 @@ require_once('classes.php');
 
 // delete advert
 if (isset($_GET['del'])) {
-    Ads::deleteAdvert();
+    $id = (int) $_GET['del'];
+    Ads::deleteAdvert($id);
 }
 
 
@@ -55,31 +56,8 @@ if (isset($_POST['formSubmit'])) {
 
 // insert advert to form
 if ( isset($_GET['id']) ) {
-    AdsStore::advertForForm();
-} else {
-    $title='';
-    $price='';
-    $name='';
-    $description='';
-    $phone='';
-    $email='';
-    $allow_mails='';
-    $private='';
-    $city='';
-    $metro='';
-    $category_id='';
-
-    $smarty->assign('private', $private);
-    $smarty->assign('name', $name);
-    $smarty->assign('email', $email);
-    $smarty->assign('allow_mails', $allow_mails);
-    $smarty->assign('phone', $phone);
-    $smarty->assign('city', $city);
-    $smarty->assign('metro', $metro);
-    $smarty->assign('title', $title);
-    $smarty->assign('description', $description);
-    $smarty->assign('price', $price);
-    $smarty->assign('category_id', $category_id);
+    $id = (int) $_GET['id'];
+    AdsStore::advertForForm($id);
 }
 
 AdsStore::instance()->getAllAdsFromDb()->prepareForOut()->getSelects()->display();

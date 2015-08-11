@@ -1,14 +1,15 @@
-<?php /* Smarty version 2.6.28, created on 2015-08-10 16:10:01
+<?php /* Smarty version 2.6.28, created on 2015-08-11 18:42:16
          compiled from oop.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'oop.tpl', 49, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'oop.tpl', 50, false),)), $this); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OOP</title>
+    <link rel="stylesheet" href="style.css">
+    <title>dz12-OOP</title>
 
     <!-- Bootstrap -->
    <!-- Latest compiled and minified CSS -->
@@ -20,9 +21,9 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_option
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </head>
-  <body style="padding: 3em;">       
-    <form style="width: 45%; float: left; margin-right: 1em;" class="form-horizontal" method="POST" role="form">
-    <h2>Add advert</h2>
+  <body>       
+    <form class="form-horizontal" method="POST" role="form">
+    <h2 class="sub-header">Add advert</h2>
   <div class="form-group">
     <label for="inputTitle" class="col-sm-2 control-label">Title</label>
     <div class="col-sm-10">
