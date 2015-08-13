@@ -72,17 +72,18 @@ class Ads{
 }
 
 class PrivateAdverts extends Ads {
-    public $type;
-
     public function __construct($ad) {
         parent::__construct($ad);
-        $this->type=$ad['type'];
+        $this->type='private';
     }
     
 }
 class CompanyAdverts extends Ads {
-
-}
+    public function __construct($ad) {
+        parent::__construct($ad);
+        $this->type='company';
+    }
+} 
 
 class AdsStore{
     private static $instance=NULL;
@@ -104,6 +105,11 @@ class AdsStore{
         global $db;
         $all = $db->select('select * from adverts');
         foreach ($all as $value){
+            if ($value['type'] == 'private') {
+                $ad = new PrivateAdverts($value);
+            } elseif ($value['type'] == 'company') {
+                $ad = new CompanyAdverts($value);
+            }
             $ad = new Ads($value);
             self::addAds($ad); //помещаем объекты в хранилище
         }
@@ -135,6 +141,7 @@ class AdsStore{
         $categ = json_decode($selects[2]['options'], true);
         $smarty->assign('categorys', $categ);
         return self::$instance;
+
     }
 
     public static function advertForForm($id) {

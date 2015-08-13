@@ -12,7 +12,7 @@ require $project_root.'/functions.php';
 
 $smarty = new Smarty;
 $smarty->compile_check=true;
-$smarty->debugging=false;
+$smarty->debugging=true;
 
 $smarty->template_dir=$smarty_root.'/templates/';
 $smarty->compile_dir=$smarty_root.'/templates_c/';
@@ -54,10 +54,13 @@ if (isset($_POST['formSubmit'])) {
     }
 }
 
+
+AdsStore::instance()->getAllAdsFromDb()->prepareForOut()->getSelects();
+
 // insert advert to form
 if ( isset($_GET['id']) ) {
     $id = (int) $_GET['id'];
     AdsStore::advertForForm($id);
 }
 
-AdsStore::instance()->getAllAdsFromDb()->prepareForOut()->getSelects()->display();
+AdsStore::display();

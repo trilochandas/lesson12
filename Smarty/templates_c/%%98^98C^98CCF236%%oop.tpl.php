@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.28, created on 2015-08-11 18:42:16
+<?php /* Smarty version 2.6.28, created on 2015-08-13 11:39:43
          compiled from oop.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'oop.tpl', 50, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'oop.tpl', 26, false),array('function', 'html_options', 'oop.tpl', 50, false),)), $this); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,70 +27,70 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_option
   <div class="form-group">
     <label for="inputTitle" class="col-sm-2 control-label">Title</label>
     <div class="col-sm-10">
-      <input type="text" name="title" value="<?php echo $this->_tpl_vars['title']; ?>
+      <input type="text" name="title" value="<?php echo ((is_array($_tmp=@$this->_tpl_vars['title'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
 " class="form-control" id="inputTitle" placeholder="Title">
     </div>
   </div>
   <div class="form-group">
     <label for="inputDescription" class="col-sm-2 control-label">Description</label>
     <div class="col-sm-10">
-     <textarea name="description" class="form-control" id="inputDescription" rows="3"><?php echo $this->_tpl_vars['description']; ?>
+     <textarea name="description" class="form-control" id="inputDescription" rows="3"><?php echo ((is_array($_tmp=@$this->_tpl_vars['description'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
 </textarea>
     </div>
   </div>
   <div class="form-group">
     <label for="inputName" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">
-     <input type="text" name="name" value="<?php echo $this->_tpl_vars['name']; ?>
+     <input type="text" name="name" value="<?php echo ((is_array($_tmp=@$this->_tpl_vars['name'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
 " class="form-control" id="inputName" placeholder="Name">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
-     <input type="email" name="email" value="<?php echo $this->_tpl_vars['email']; ?>
+     <input type="email" name="email" value="<?php echo ((is_array($_tmp=@$this->_tpl_vars['email'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
 " class="form-control" id="inputEmail" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">City</label>
     <div class="col-sm-10">
-     <?php echo smarty_function_html_options(array('class' => "form-control",'name' => 'city','options' => $this->_tpl_vars['citys'],'selected' => $this->_tpl_vars['city']), $this);?>
+     <?php echo smarty_function_html_options(array('class' => "form-control",'name' => 'city','options' => $this->_tpl_vars['citys'],'selected' => ((is_array($_tmp=@$this->_tpl_vars['city'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, ''))), $this);?>
 
     </div>
   </div>
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">Metro</label>
     <div class="col-sm-10">
-     <?php echo smarty_function_html_options(array('class' => "form-control",'name' => 'metro','options' => $this->_tpl_vars['metro1'],'selected' => $this->_tpl_vars['metro']), $this);?>
+     <?php echo smarty_function_html_options(array('class' => "form-control",'name' => 'metro','options' => $this->_tpl_vars['metro1'],'selected' => ((is_array($_tmp=@$this->_tpl_vars['metro'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, ''))), $this);?>
 
     </div>
   </div>
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">Category</label>
     <div class="col-sm-10">
-     <?php echo smarty_function_html_options(array('class' => "form-control",'name' => 'category_id','options' => $this->_tpl_vars['categorys'],'selected' => $this->_tpl_vars['category_id']), $this);?>
+     <?php echo smarty_function_html_options(array('class' => "form-control",'name' => 'category_id','options' => $this->_tpl_vars['categorys'],'selected' => ((is_array($_tmp=@$this->_tpl_vars['category_id'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, ''))), $this);?>
 
     </div>
   </div>
   <div class="form-group">
     <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
     <div class="col-sm-10">
-     <input type="phone" name="phone" value="<?php echo $this->_tpl_vars['phone']; ?>
+     <input type="phone" name="phone" value="<?php echo ((is_array($_tmp=@$this->_tpl_vars['phone'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
 " class="form-control" id="inputPhone" placeholder="0001234567">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPrice" class="col-sm-2 control-label">Price</label>
     <div class="col-sm-10">
-     <input type="text" name="price" value="<?php echo $this->_tpl_vars['price']; ?>
+     <input type="text" name="price" value="<?php echo ((is_array($_tmp=@$this->_tpl_vars['price'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
 " class="form-control" id="inputPrice" placeholder="0">
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <label>
-        <input value="1" name="allow_mails" <?php echo $this->_tpl_vars['allow_mails']; ?>
+        <input value="1" name="allow_mails" <?php echo ((is_array($_tmp=@$this->_tpl_vars['allow_mails'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
  type="checkbox"> Mail me!
       </label>
     </div>
@@ -98,11 +98,11 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_option
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <div class="radio">
-        <label>  <input type="radio" <?php if ($this->_tpl_vars['type'] == 'private'): ?> <?php echo 'checked'; ?>
+        <label>  <input type="radio" <?php if (((is_array($_tmp=@$this->_tpl_vars['type'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')) == 'private'): ?> <?php echo 'checked'; ?>
  <?php endif; ?> name="type" id="optionsRadios1" value="private" checked> Private advert </label>
       </div>
       <div class="radio">
-        <label>  <input type="radio" <?php if ($this->_tpl_vars['type'] == 'company'): ?> <?php echo 'checked'; ?>
+        <label>  <input type="radio" <?php if (((is_array($_tmp=@$this->_tpl_vars['type'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')) == 'company'): ?> <?php echo 'checked'; ?>
  <?php endif; ?> name="type" id="optionsRadios2" value="company">Company advert  </label>
       </div>
     </div>

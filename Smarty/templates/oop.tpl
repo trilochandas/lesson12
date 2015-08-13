@@ -23,71 +23,71 @@
   <div class="form-group">
     <label for="inputTitle" class="col-sm-2 control-label">Title</label>
     <div class="col-sm-10">
-      <input type="text" name="title" value="{$title}" class="form-control" id="inputTitle" placeholder="Title">
+      <input type="text" name="title" value="{$title|default:''}" class="form-control" id="inputTitle" placeholder="Title">
     </div>
   </div>
   <div class="form-group">
     <label for="inputDescription" class="col-sm-2 control-label">Description</label>
     <div class="col-sm-10">
-     <textarea name="description" class="form-control" id="inputDescription" rows="3">{$description}</textarea>
+     <textarea name="description" class="form-control" id="inputDescription" rows="3">{$description|default:''}</textarea>
     </div>
   </div>
   <div class="form-group">
     <label for="inputName" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">
-     <input type="text" name="name" value="{$name}" class="form-control" id="inputName" placeholder="Name">
+     <input type="text" name="name" value="{$name|default:''}" class="form-control" id="inputName" placeholder="Name">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
-     <input type="email" name="email" value="{$email}" class="form-control" id="inputEmail" placeholder="Email">
+     <input type="email" name="email" value="{$email|default:''}" class="form-control" id="inputEmail" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">City</label>
     <div class="col-sm-10">
-     {html_options class="form-control" name=city options=$citys selected=$city }
+     {html_options class="form-control" name=city options=$citys selected=$city|default:'' }
     </div>
   </div>
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">Metro</label>
     <div class="col-sm-10">
-     {html_options class="form-control" name=metro options=$metro1 selected=$metro }
+     {html_options class="form-control" name=metro options=$metro1 selected=$metro|default:'' }
     </div>
   </div>
   <div class="form-group">
     <label for="inputCity" class="col-sm-2 control-label">Category</label>
     <div class="col-sm-10">
-     {html_options class="form-control" name=category_id options=$categorys selected=$category_id }
+     {html_options class="form-control" name=category_id options=$categorys selected=$category_id|default:'' }
     </div>
   </div>
   <div class="form-group">
     <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
     <div class="col-sm-10">
-     <input type="phone" name="phone" value="{$phone}" class="form-control" id="inputPhone" placeholder="0001234567">
+     <input type="phone" name="phone" value="{$phone|default:''}" class="form-control" id="inputPhone" placeholder="0001234567">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPrice" class="col-sm-2 control-label">Price</label>
     <div class="col-sm-10">
-     <input type="text" name="price" value="{$price}" class="form-control" id="inputPrice" placeholder="0">
+     <input type="text" name="price" value="{$price|default:''}" class="form-control" id="inputPrice" placeholder="0">
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <label>
-        <input value="1" name="allow_mails" {$allow_mails} type="checkbox"> Mail me!
+        <input value="1" name="allow_mails" {$allow_mails|default:''} type="checkbox"> Mail me!
       </label>
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <div class="radio">
-        <label>  <input type="radio" {if $type == 'private'} {'checked'} {/if} name="type" id="optionsRadios1" value="private" checked> Private advert </label>
+        <label>  <input type="radio" {if $type|default:'' == 'private'} {'checked'} {/if} name="type" id="optionsRadios1" value="private" checked> Private advert </label>
       </div>
       <div class="radio">
-        <label>  <input type="radio" {if $type == 'company'} {'checked'} {/if} name="type" id="optionsRadios2" value="company">Company advert  </label>
+        <label>  <input type="radio" {if $type|default:'' == 'company'} {'checked'} {/if} name="type" id="optionsRadios2" value="company">Company advert  </label>
       </div>
     </div>
   </div>
