@@ -55,12 +55,13 @@ if (isset($_POST['formSubmit'])) {
 }
 
 
-AdsStore::instance()->getAllAdsFromDb()->prepareForOut()->getSelects();
+$instance = AdsStore::instance();
+$instance->getAllAdsFromDb()->getAllAdsFromDb()->prepareForOut()->getSelects();
 
 // insert advert to form
-if ( isset($_GET['id']) ) {
+if ( isset($_GET['id']) ) { // просмотр объявления
     $id = (int) $_GET['id'];
-    AdsStore::advertForForm($id);
+    $instance->advertForForm($id); 
 }
 
-AdsStore::display();
+$instance->display(); 

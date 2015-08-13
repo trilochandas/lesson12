@@ -110,7 +110,6 @@ class AdsStore{
             } elseif ($value['type'] == 'company') {
                 $ad = new CompanyAdverts($value);
             }
-            $ad = new Ads($value);
             self::addAds($ad); //помещаем объекты в хранилище
         }
         return self::$instance;
@@ -130,7 +129,7 @@ class AdsStore{
         $smarty->display('oop.tpl');
     }
 
-    public static function getSelects() {
+    public function getSelects() {
         global $smarty;
         global $db;
         $selects = $db->query("SELECT * FROM select_meta");
@@ -144,15 +143,27 @@ class AdsStore{
 
     }
 
-    public static function advertForForm($id) {
+    public function advertForForm($id) {
         global $smarty;
-        // global $db;
-        // $advertForForm = $db->query('SELECT * FROM adverts WHERE id=?', $id);
-        // var_dump($advertForForm[0]);
         $advertForForm = $this->ads[$id];
-        foreach (get_object_vars($advertForForm) as $key => $value){
-            $smarty->assign($key,$value);
-        }
+        // var_dump($this->ads);
+        // var_dump(get_object_vars($advertForForm));
+        foreach (get_object_vars($advertForForm) as $key => $value)
+        $$key = $value;
+
+        $allow_mails = ( $allow_mails == 1 ) ? 'checked' : '';
+        $smarty->assign('id', $id);
+        $smarty->assign('type', $type);
+        $smarty->assign('name', $name);
+        $smarty->assign('email', $email);
+        $smarty->assign('allow_mails', $allow_mails);
+        $smarty->assign('phone', $phone);
+        $smarty->assign('city', $city);
+        $smarty->assign('metro', $metro);
+        $smarty->assign('title', $title);
+        $smarty->assign('description', $description);
+        $smarty->assign('price', $price);
+        $smarty->assign('category_id', $category_id);
     }
 
 }

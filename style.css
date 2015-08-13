@@ -15,6 +15,6 @@ body{
 }
 form{
 	width: 45%;
-	position: absolute;
+	/*position: absolute;*/
 	top: 0;
 }
