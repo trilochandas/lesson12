@@ -146,25 +146,13 @@ class AdsStore{
 
     public static function advertForForm($id) {
         global $smarty;
-        global $db;
-        $advertForForm = $db->query('SELECT * FROM adverts WHERE id=?', $id);
+        // global $db;
+        // $advertForForm = $db->query('SELECT * FROM adverts WHERE id=?', $id);
         // var_dump($advertForForm[0]);
-        foreach ($advertForForm[0] as $key => $value) 
-            $$key = $value;
-        $allow_mails = ( $allow_mails == 1 ) ? 'checked' : '';
-
-        $smarty->assign('id', $id);
-        $smarty->assign('type', $type);
-        $smarty->assign('name', $name);
-        $smarty->assign('email', $email);
-        $smarty->assign('allow_mails', $allow_mails);
-        $smarty->assign('phone', $phone);
-        $smarty->assign('city', $city);
-        $smarty->assign('metro', $metro);
-        $smarty->assign('title', $title);
-        $smarty->assign('description', $description);
-        $smarty->assign('price', $price);
-        $smarty->assign('category_id', $category_id);
+        $advertForForm = $this->ads[$id];
+        foreach (get_object_vars($advertForForm) as $key => $value){
+            $smarty->assign($key,$value);
+        }
     }
 
 }
