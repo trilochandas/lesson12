@@ -67,6 +67,10 @@ class Ads{
         global $db;
         $db->query('DELETE FROM adverts WHERE id=?', $id);
     }
+
+    public function getObjectParam() {
+        return get_object_vars($this);
+    }
     
     
 }
@@ -146,24 +150,8 @@ class AdsStore{
     public function advertForForm($id) {
         global $smarty;
         $advertForForm = $this->ads[$id];
-        // var_dump($this->ads);
-        // var_dump(get_object_vars($advertForForm));
-        foreach (get_object_vars($advertForForm) as $key => $value)
-        $$key = $value;
-
-        $allow_mails = ( $allow_mails == 1 ) ? 'checked' : '';
-        $smarty->assign('id', $id);
-        $smarty->assign('type', $type);
-        $smarty->assign('name', $name);
-        $smarty->assign('email', $email);
-        $smarty->assign('allow_mails', $allow_mails);
-        $smarty->assign('phone', $phone);
-        $smarty->assign('city', $city);
-        $smarty->assign('metro', $metro);
-        $smarty->assign('title', $title);
-        $smarty->assign('description', $description);
-        $smarty->assign('price', $price);
-        $smarty->assign('category_id', $category_id);
+        foreach ( $advertForForm->getObjectParam() as $key => $value)
+        $smarty->assign($key,$value);
     }
 
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-08-13 14:07:38
+<?php /* Smarty version 2.6.28, created on 2015-08-14 08:41:29
          compiled from oop.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'oop.tpl', 26, false),array('function', 'html_options', 'oop.tpl', 50, false),)), $this); ?>
@@ -90,8 +90,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <label>
-        <input value="1" name="allow_mails" <?php echo ((is_array($_tmp=@$this->_tpl_vars['allow_mails'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
- type="checkbox"> Mail me!
+        <input value="1" name="allow_mails" <?php if (((is_array($_tmp=@$this->_tpl_vars['allow_mails'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')) == 1): ?> <?php echo 'checked'; ?>
+ <?php endif; ?> type="checkbox"> Mail me!
       </label>
     </div>
   </div>

@@ -77,7 +77,7 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <label>
-        <input value="1" name="allow_mails" {$allow_mails|default:''} type="checkbox"> Mail me!
+        <input value="1" name="allow_mails" {if $allow_mails|default:'' == 1} {'checked'} {/if} type="checkbox"> Mail me!
       </label>
     </div>
   </div>

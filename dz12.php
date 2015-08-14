@@ -12,7 +12,7 @@ require $project_root.'/functions.php';
 
 $smarty = new Smarty;
 $smarty->compile_check=true;
-$smarty->debugging=true;
+$smarty->debugging=false;
 
 $smarty->template_dir=$smarty_root.'/templates/';
 $smarty->compile_dir=$smarty_root.'/templates_c/';
